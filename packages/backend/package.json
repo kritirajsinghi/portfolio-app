@@ -8,8 +8,8 @@
     "start:withMongo":"docker-compose up",
     "test": "mocha --timeout 10000 './src/**/*.spec.js' && yarn lint:code",
     "test:coverage": "nyc yarn test",
-    "lint": "depcheck --ignores=husky,lint-staged,prettier",
-    "lint:code": "eslint src/**/*.js"
+    "format": "prettier --write \"*(src|config)/**/*.{js,json}\"",
+    "format:lint": "yarn format && eslint src/**/*.js"
   },
   "author": "",
   "license": "ISC",
