@@ -1,0 +1,87 @@
+{
+  "nav": {
+    "menuItems": [
+      {
+        "id": "home",
+        "name": "Home"
+      },
+      {
+        "id": "about",
+        "name": "About"
+      },
+      {
+        "id": "resume",
+        "name": "Resume",
+        "download": "../../assets/kriticv.pdf"
+      }
+    ]
+  },
+  "resume": {
+    "skills": [
+      {
+        "name": "JavaScript",
+        "level": "90%"
+      },
+      {
+        "name": "ReactJs",
+        "level": "90%"
+      },
+      {
+        "name": "Angular",
+        "level": "90%"
+      },
+      {
+        "name": "Nodejs",
+        "level": "80%"
+      },
+      {
+        "name": "Spring-Boot",
+        "level": "50%"
+      },
+      {
+        "name": "HTML5",
+        "level": "90%"
+      },
+      {
+        "name": "Docker",
+        "level": "70%"
+      },
+      {
+        "name": "Jenkins",
+        "level": "50%"
+      },
+      {
+        "name": "Azure",
+        "level": "30%"
+      },
+      {
+        "name": "React Native",
+        "level": "60%"
+      }
+    ]
+  },
+  "footer": {
+    "social": [
+      {
+        "name": "facebook",
+        "url": "https://www.facebook.com/suraj.singhi",
+        "className": "fa fa-facebook"
+      },
+      {
+        "name": "linkedin",
+        "url": "https://www.linkedin.com/in/kritirajsinghi",
+        "className": "fa fa-linkedin"
+      },
+      {
+        "name": "instagram",
+        "url": "https://www.instagram.com/kriti_singhi/",
+        "className": "fa fa-instagram"
+      },
+      {
+        "name": "github",
+        "url": "https://github.com/kritiraj",
+        "className": "fa fa-github"
+      }
+    ]
+  }
+}

@@ -1,0 +1,85 @@
+$color1: #52c8fa;
+$color2:#fff;
+$font:"europa",sans-serif;
+
+.button{
+    font-family: $font;
+    cursor: pointer;
+    justify-content: center;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-transition: all .2s ease-in-out;
+    border: 1px solid $color1;
+    display: inline-flex;
+    line-height: 1.5;
+    height: 2.5em;
+    padding: 1.25em 2em;
+    width: 100%;
+    i{
+        padding: 7px 10px;
+    }
+}
+.button:focus{
+    outline: 0;
+}
+.button.is-primary{
+    padding: 8px 20px;
+    font-weight: 400;
+}
+.button.is-navbar{
+    padding: 0em 1em;
+    font-weight: 400;
+}
+.button.is-medium{
+    font-size: 1.25rem;
+}
+.button.is-large{
+    font-size: 1.6rem;
+}
+.button.is-small{
+    font-size: 1.0rem;
+}
+.button.is-outlined{
+    border-width: 1px;
+    background-color: transparent;
+    border-color: $color1;
+    color: $color1;
+}
+.button.is-filled{
+    background-color: $color1;
+    color: $color2;
+}
+.button.is-filled:hover{
+    background-color: $color2;
+    color:$color1;
+    border-color: $color1;
+    border-width: 2px;;
+}
+
+.button.is-rounded{
+    border-radius: 30000000px;;
+}
+.button.is-outlined:hover{
+    background-color: $color1;
+    color: $color2;
+}
+
+// Button Text
+.button-title{
+    display: inline-flex;
+    align-items: center;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+}
+.button-icon:first-child:not(:last-child){
+    margin-left: calc(-0.5em - 1px);
+    margin-right: 0.4rem;
+    margin-top: -0.2em;
+}
+
+.button-icon{
+    -webkit-box-align: center;
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+}

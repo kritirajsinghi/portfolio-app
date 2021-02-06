@@ -1,0 +1,125 @@
+#resume {
+  height: 88vh;
+  width: 96%;
+  display: inline-table;
+  /* max-width: 1020px; */
+  padding: 2rem 4rem 0rem 4rem;
+}
+
+#resume h3 {
+  font: 22px "opensans-bold", sans-serif;
+  font-weight: bold;
+}
+
+.bars {
+  width: 100%;
+  float: left;
+  padding: 0;
+  text-align: left;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.bars .skills {
+  margin-top: 36px;
+  list-style: none;
+  padding: 0 !important;
+}
+
+.bars li {
+  position: relative;
+  margin-bottom: 50px;
+  background: #ccc;
+  height: 35px;
+  border-radius: 3px;
+}
+
+.bars li em {
+  font: 15px "opensans-bold", sans-serif;
+  color: #313131;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  position: relative;
+  top: -30px;
+}
+
+.bar-expand {
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  margin: 0;
+  padding-right: 24px;
+  background: #52c8fa;
+  display: inline-block;
+  height: 35px;
+  line-height: 35px;
+  border-radius: 3px 0 0 3px;
+}
+
+.bars div {
+  padding-right: 40px;
+}
+
+.resume-item {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr;
+  border-bottom: 1px solid #e8e8e8;
+  margin-bottom: 48px;
+  padding-bottom: 24px;
+}
+.resume-item:last-child {
+  border-bottom: none;
+}
+
+.resume-item-title {
+  align-items: flex-start;
+  /* display: flex; */
+  justify-content: center;
+  display: flex;
+}
+
+.resume-item-title h1 {
+  display: flex;
+  width: 15%;
+  border-bottom: 3px solid #11abb0;
+  justify-content: center;
+  font: 18px "opensans-bold", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding-bottom: 8px;
+  font-weight: bolder;
+}
+
+.resume-item-main-col .light-para {
+  font-size: 15px;
+  color: #838795;
+  margin: 0 0 30px;
+  text-align: justify;
+  line-height: 28px;
+}
+@media only screen and (max-width: 767px) {
+  #resume {
+    height: 88vh;
+    width: 100%;
+    display: inline-table;
+    /* max-width: 1020px; */
+    padding: 2rem 2rem 0rem 2rem;
+  }
+  .bars,
+  .resume-item {
+    display: block;
+  }
+  #resume h3 {
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    margin-top: 20px;
+  }
+  .resume-item-main-col .light-para p {
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+  }
+}

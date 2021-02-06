@@ -1,0 +1,26 @@
+version: '2'
+services:
+  frontend:
+    build: ./packages/frontend
+    ports:
+      - '80:80'
+    links:
+      - backend
+    environment:
+      apiBaseUrl: http://localhost:4000
+  backend:
+    build: ./packages/backend
+    restart: always
+    links:
+      - mongo
+    ports:
+      - '5000:5000'
+    environment:
+      PORT: 5000
+      MONGO_URI: mongodb://mongo:27017/portfolio
+  mongo:
+    image: mongo
+    volumes: 
+      - ./data:/data/db
+    ports:
+      - '27017:27017'
