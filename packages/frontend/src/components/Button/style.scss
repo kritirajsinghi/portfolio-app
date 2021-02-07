@@ -83,3 +83,7 @@ $font:"europa",sans-serif;
     display: inline-flex;
     justify-content: center;
 }
+.button:disabled{
+    background-color: gray;
+    opacity: 0.5;
+  }

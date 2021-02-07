@@ -1,113 +1,134 @@
-import React,{useState,useEffect} from 'react';
-import './style.css'
-const emailRegex=/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+import React, { useState, useEffect } from "react";
+import validate from "./helper";
+import "./style.css";
 
-const validations={
-    "required":(value)=>{
-        return(
-            value==undefined ||
-            value===null ||
-            value===""
-        )
-    },
-    "format":(value,rule)=>{
-        switch(rule.value){
-            case "email":
-                return !emailRegex.test(value)
-            default:
-                return false;
-        }
-    },
-    "minLength":(value,rule)=> value && value.length<rule.value
-}
-const validate=(value,field)=>{
-    const {validation}=field;
-    let error="";
-    if (validation){
-        const rules=Object.keys(validation);
-        console.log(rules)
-        for(const rule of rules){
-            const invalid=validations[rule](value,validation[rule])
-            if(invalid){
-                error=validation[rule].message;
-                break;
-            }   
-        }
-        return error;
+const Form = ({ data, onSubmit, apiResponse }) => {
+  const [form, setForm] = useState({});
+  const [error, setError] = useState(true);
+
+  /* On Mount iterate through form items and set the initia state */
+  useEffect(() => {
+    if (data) {
+      const formState = {};
+      data.forEach(
+        (item) =>
+          (formState[item.name] = { value: "", error: true, touched: false, pristine: false })
+      );
+      setForm(formState);
     }
-}
-const Form=({data,onSubmit})=>{
-    const [form,setForm]=useState({}) 
-    const [error,setError]=useState(true)   
-    useEffect(()=>{
-        if(data){
-            const formState={};
-            data.forEach((item)=>formState[item.name]={value:'',error:true,touched:false});
-            setForm(formState)
-        }
-    },[])
-    const formErrorStatus=()=>{
-        let error=[];
-        for(let item in form){
-                if(form[item].error){{
-                    error.push(form[item].error);
-                }
-            }    
-        }
-        setError([...error])
+  }, []);
+
+  const formErrorStatus = () => {
+    let err = [];
+    for (let item in form) {
+      if (form[item].error || !form[item].pristine) {
+        err.push(form[item].error);
+      }
     }
-    const setFormData=(event,formItem,blur=false)=>{
-        let error=null;
-        let obj={...form[formItem.name]};
-        if(form[formItem.name].touced || blur){
-            error= validate(event.target.value,formItem);
-        }
-        if(blur){
-           obj.touched=true
-        }
-        obj={...obj,value:event.target.value,error:error}
-        setForm({...form,[formItem.name]:obj})
-        formErrorStatus()
+    setError([...err]);
+  };
+
+  const setFormData = (event, formItem, blur = false) => {
+    let error = null;
+    let obj = { ...form[formItem.name] };
+    if (form[formItem.name].touched || blur) {
+      error = validate(event.target.value, formItem);
     }
-    return(
+    if (blur) {
+      obj.touched = true;
+    }
+    obj = { ...obj, value: event.target.value, error: error, pristine: true };
+    setForm({ ...form, [formItem.name]: obj });
+    formErrorStatus();
+  };
+  
+  return (
+    <>
+      {" "}
+      {apiResponse.error ? (
+        <div className="alert alert-danger">
+          <strong>{apiResponse.error}</strong>
+        </div>
+      ) : (
+        ""
+      )}
+      {apiResponse.success ? (
         <>
-        <form>
-        {
-        data.map((formItem)=>{
-            switch(formItem.type){
+          <svg className="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+            <circle className="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
+            <path className="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+          </svg>
+          <div className="alert alert-success alert-center">
+            <strong>We have received your query.</strong>
+          </div>
+        </>
+      ) : (
+        <>
+          <form>
+            {data.map((formItem, i) => {
+              switch (formItem.type) {
                 case "input":
-                    return(
-                        <>
-                     <label htmlFor={formItem.name}>
-                     {formItem.name} {formItem.validation.required? <span className="required">*</span>:''}
-                    </label>
-                    <div className="input-block">
-                    <input type="text" name={formItem.name} onBlur={(e)=>setFormData(e,formItem,true)}onChange={(e)=>setFormData(e,formItem)} defaultValue="" value={form[formItem.name] ?form[formItem.name].value:''}/>
-                    {form[formItem.name]?<span className="error">{form[formItem.name].error}</span> :''}
+                  return (
+                    <div key={i}>
+                      <label htmlFor={formItem.name}>
+                        {formItem.name}{" "}
+                        {formItem.validation.required ? <span className="required">*</span> : ""}
+                      </label>
+                      <div className="input-block">
+                        <input
+                          type="text"
+                          name={formItem.name}
+                          onBlur={(e) => setFormData(e, formItem, true)}
+                          onChange={(e) => setFormData(e, formItem)}
+                          value={form[formItem.name] ? form[formItem.name].value : ""}
+                        />
+                        {form[formItem.name] ? (
+                          <span className="error">{form[formItem.name].error}</span>
+                        ) : (
+                          ""
+                        )}
+                      </div>
                     </div>
-                    </>)
+                  );
                 case "textarea":
-                    return(
-                        <>
-                         <label htmlFor={formItem.name}>
-                         {formItem.name} {formItem.validation.required? <span className="required">*</span>:''}
-                    </label>
-                    <div className="input-block">
-                         <textarea rows={6} name={formItem.name} onBlur={(e)=>setFormData(e,formItem,true)}onChange={(e)=>setFormData(e,formItem)} onChange={(e)=>setFormData(e,formItem)} value={form[formItem.name] ?form[formItem.name].value:'' }/>
-                         {form[formItem.name]?<span className="error">{form[formItem.name].error}</span> :''}
-                         </div>
-                        </>
-                    )
+                  return (
+                    <div key={i}>
+                      <label htmlFor={formItem.name}>
+                        {formItem.name}{" "}
+                        {formItem.validation.required ? <span className="required">*</span> : ""}
+                      </label>
+                      <div className="input-block">
+                        <textarea
+                          rows={6}
+                          name={formItem.name}
+                          onBlur={(e) => setFormData(e, formItem, true)}
+                          onChange={(e) => setFormData(e, formItem)}
+                          value={form[formItem.name] ? form[formItem.name].value : ""}
+                        />
+                        {form[formItem.name] ? (
+                          <span className="error">{form[formItem.name].error}</span>
+                        ) : (
+                          ""
+                        )}
+                      </div>
+                    </div>
+                  );
                 default:
-                    return <></>
-            }
-        })
-    }
-   
-    </form>
-     <button disabled={!(error && error.length<=0)} onClick={()=>onSubmit(form)}>Submit</button>
-     </>
-     )
-}
+                  return <></>;
+              }
+            })}
+          </form>
+          <button
+            disabled={!(error && error.length <= 0)}
+            className="button is-primary is-rounded is-small is-filled btn-center-small"
+            onClick={() => onSubmit(form)}
+          >
+            Submit
+          </button>
+        </>
+      )}
+    </>
+  );
+};
 
 export default Form;

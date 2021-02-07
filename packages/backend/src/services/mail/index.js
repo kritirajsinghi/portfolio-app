@@ -11,7 +11,7 @@ const createTransporter=()=>(nodemailer.createTransport({
         secure: true,
         auth: {
           type: 'OAuth2',
-          user: 'kritiraj.fullstack@gmail.com',
+          user: process.env.EMAIL_ID,
           clientId: process.env.CLIENT_ID,
           clientSecret: process.env.CLIENT_SECRET,
           refreshToken: process.env.REFRESH_TOKEN,
@@ -37,13 +37,13 @@ const sendMail=async(mailOptions)=>{
     await transporter.sendMail(mailOptions)
 } 
 
-const mail=async(data,next)=>{
+const mail=async(data)=>{
   try{
-    const clientHtmlMail=await loadTemplate('client',data);
-    const clientMailOptions=getMailOptions(data.email,config.mailOptions.clientSubject,clientHtmlMail);
+    // const clientHtmlMail=await loadTemplate('client',data);
+    // const clientMailOptions=getMailOptions(data.email,config.mailOptions.clientSubject,clientHtmlMail);
     const adminHtmlMail=await loadTemplate('admin',{...data,admin:config.mailOptions.adminName});
     const adminMailOptions=getMailOptions(config.mailOptions.adminMail,`${config.mailOptions.adminSubject} from ${data.name}`,adminHtmlMail);
-    await sendMail(clientMailOptions);
+    // await sendMail(clientMailOptions);
     await sendMail(adminMailOptions)
   }
   catch(err){

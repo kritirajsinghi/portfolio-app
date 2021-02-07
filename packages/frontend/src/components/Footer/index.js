@@ -1,6 +1,8 @@
 import React from "react";
 import { animateScroll } from "react-scroll";
+
 import "./style.css";
+
 const Footer = ({ data }) => {
   if (data) {
     var networks = data.social.map(function (network) {

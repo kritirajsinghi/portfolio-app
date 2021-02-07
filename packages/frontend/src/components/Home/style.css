@@ -17,7 +17,8 @@
   margin: 0% auto;
   width: 100%;
   padding-bottom: 30px;
-  padding-top: 20%;
+  height: inherit;
+  padding-top: 10%;
 }
 
 .profile-image {
@@ -59,18 +60,15 @@
   /* header styles
    ------------------------------------------------------------------ */
   header .banner-text h1 {
-    font: 80px/1.1em "opensans-bold", sans-serif;
+    font: 60px/1.1em "opensans-bold", sans-serif;
     letter-spacing: -1px;
     margin: 0 auto 12px auto;
   }
 }
 
 @media only screen and (max-width: 900px) {
-  .banner-text {
-    padding-top: 20%;
-  }
   .banner-text h1 {
-    font: 78px/1.1em "opensans-bold", sans-serif;
+    font: 60px/1.1em "opensans-bold", sans-serif;
     letter-spacing: -1px;
   }
   .banner-text h3 {
@@ -83,11 +81,8 @@
   }
 }
 @media only screen and (max-width: 480px) {
-  .banner-text {
-    padding-top: 50%;
-  }
   .banner-text h1 {
-    font: 35px/1.1em "opensans-bold", sans-serif;
+    font: 32px/1.1em "opensans-bold", sans-serif;
     margin: 0 auto 24px auto;
   }
   .banner-text h3 {
@@ -96,11 +91,8 @@
   }
 }
 @media only screen and (max-width: 700px) {
-  .banner-text {
-    padding-top: 50%;
-  }
   .banner-text h1 {
-    font: 35px/1.1em "opensans-bold", sans-serif;
+    font: 32px/1.1em "opensans-bold", sans-serif;
     margin: 0 auto 24px auto;
   }
   .banner-text h3 {
@@ -109,8 +101,3 @@
   }
 }
 
-@media (max-width: 700px) {
-  .banner-text {
-    padding-top: 50%;
-  }
-}

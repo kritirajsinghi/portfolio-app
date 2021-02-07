@@ -1,4 +1,3 @@
 export default {
-    apiBaseUrl: "https://kriti-portfolio-api.herokuapp.com",
-  };
-  
+  apiBaseUrl: "https://kriti-portfolio-api.herokuapp.com",
+};

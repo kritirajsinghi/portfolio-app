@@ -1,12 +1,15 @@
 import React from "react";
-import "./style.css";
 import profile from "assets/images/profile.png";
 import resume from "assets/kriticv.pdf";
 import Button from "components/Button";
-const About = () => {
+
+import "./style.css";
+const About = ({data}) => {
+
   const resumeDownload = () => {
     window.open(resume, "_blank");
   };
+
   return (
     <section id="about">
       <div className="about-row">
@@ -17,30 +20,25 @@ const About = () => {
           <div className="description-block">
             <h3>About Me</h3>
             <p>
-              Hi there! I am Kriti Raj! I am working as a Full Stack developer with more than 4.6
-              years of experience. I&apos;ve worked around multiple projects designing, building and
-              deploying applications from dev to production environment.I have experience working in
-              multiple domains like AI, Finance and HR. With this I bring extensive experience in
-              Web Development technologies and also with shipping the build to production.
+             {data.mainIntro}
             </p>
             <p>
-              Apart from developing web applications and coding, i like to play cricket, listen to
-              music and go for parties.
+              {data.secondaryIntro}
             </p>
           </div>
           <div className="contact-details-block">
             <div>
-              <h3>Contact Details</h3>
+              <h4>Contact</h4>
               <p className="">
-                <span>Kriti Raj Singhi</span>
+                <span>{data.contact.name}</span>
                 <br />
                 <span>
-                  Leeds, UK
+                  {data.contact.location}
                   <br />
                 </span>
-                <span>+44-(0)-7459034648</span>
+  <span>{data.contact.phone}</span>
                 <br />
-                <span>kritirajsinghi@gmail.com</span>
+                <span>{data.contact.email}</span>
               </p>
             </div>
             <div>
@@ -50,7 +48,6 @@ const About = () => {
                 onClick={resumeDownload}
                 icon="fa fa-download"
               >
-                <i className=""></i>
               </Button>
             </div>
           </div>

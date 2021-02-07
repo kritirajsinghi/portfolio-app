@@ -2,7 +2,7 @@ FROM node:12.2.0-alpine as build
 WORKDIR /app
 COPY package.json /app
 RUN yarn install
-RUN yarn global add webpack-cli webpack
+RUN yarn global add webpack-cli webpack rimraf
 COPY . /app
 RUN yarn build
 

@@ -7,11 +7,14 @@ import SideDrawer from "components/SideDrawer";
 import About from "components/About";
 import Resume from "components/Resume";
 import Footer from "components/Footer";
-import Contact from "components/Contact"
+import Contact from "components/Contact";
 
 import data from "content/data.json";
+
 const App = () => {
+  
   const [sideToggle, setSideToggle] = useState(false);
+
   return (
     <div className="portfolio-app">
       <Navbar
@@ -23,7 +26,7 @@ const App = () => {
       />
       <SideDrawer show={sideToggle} data={data.nav} click={() => setSideToggle(!sideToggle)} />
       <Home />
-      <About />
+      <About data={data.about}/>
       <Resume data={data.resume} />
       <Contact data={data.contact} />
       <Footer data={data.footer} />
