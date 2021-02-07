@@ -7,6 +7,7 @@ import SideDrawer from "components/SideDrawer";
 import About from "components/About";
 import Resume from "components/Resume";
 import Footer from "components/Footer";
+import Contact from "components/Contact"
 
 import data from "content/data.json";
 const App = () => {
@@ -24,6 +25,7 @@ const App = () => {
       <Home />
       <About />
       <Resume data={data.resume} />
+      <Contact data={data.contact} />
       <Footer data={data.footer} />
     </div>
   );

@@ -5,6 +5,7 @@ const prodError=(err,res)=>{
     res.status(err.statusCode).json({status:err.status,message:err.message})
 }
 module.exports=(err,req,res,next)=>{
+    console.log("sadasdasd",err)
     err.statusCode=err.statusCode || 500;
     err.message=err.message || 'error';
     if(process.env.NODE_ENV==='development'){

@@ -1,13 +1,14 @@
+require('dotenv').config();
+
 const mongoose = require('mongoose');
-const config = require('../../config');
 
 const setupMongooseConnections = function() {
   mongoose.Promise = global.Promise;
 
-  mongoose.connect(config.MONGO.MONGO_URL,{ useNewUrlParser: true });
+  mongoose.connect(process.env.MONGO_URL,{ useNewUrlParser: true });
 
   mongoose.connection.on('connected', function() {
-    console.info('Mongoose is now connected to ', config.MONGO.MONGO_URL);
+    console.info('Mongoose is now connected');
   });
 
   mongoose.connection.on('error', function(err) {

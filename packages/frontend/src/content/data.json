@@ -1,7 +1,6 @@
 {
   "nav": {
-    "menuItems": [
-      {
+    "menuItems": [{
         "id": "home",
         "name": "Home"
       },
@@ -17,8 +16,7 @@
     ]
   },
   "resume": {
-    "skills": [
-      {
+    "skills": [{
         "name": "JavaScript",
         "level": "90%"
       },
@@ -60,9 +58,49 @@
       }
     ]
   },
-  "footer": {
-    "social": [
+  "contact": {
+    "formItems": [{
+        "type": "input",
+        "name": "email",
+        "validation": {
+          "format": {
+            "value": "email",
+            "message": "Invalid Error Message"
+          },
+          "required": {
+            "value": true,
+            "message": "This is mandatory field"
+          }
+        }
+      },
       {
+        "type": "input",
+        "name": "Name",
+        "validation": {
+          "required": {
+            "value": true,
+            "message": "This is mandatory field"
+          }
+        }
+      },
+      {
+        "type": "textarea",
+        "name": "Message",
+        "validation": {
+          "required": {
+            "value": true,
+            "message": "This is mandatory field"
+          },
+          "minLength": {
+            "value": 20,
+            "message": "Please Describe your querry more"
+          }
+        }
+      }
+    ]
+  },
+  "footer": {
+    "social": [{
         "name": "facebook",
         "url": "https://www.facebook.com/suraj.singhi",
         "className": "fa fa-facebook"
