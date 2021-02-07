@@ -8,6 +8,17 @@ header {
   overflow: hidden;
 }
 
+.navbar {
+  font: 12px 'opensans-bold', sans-serif;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  margin: 0 auto;
+  z-index: 100;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
 .navbar.is-transparent {
   background-color: white;
 }
@@ -33,19 +44,6 @@ header {
   outline: none;
 }
 
-/* nav-wrap */
-.navbar {
-  font: 12px 'opensans-bold', sans-serif;
-  width: 100%;
-  text-transform: uppercase;
-  letter-spacing: 2.5px;
-  margin: 0 auto;
-  z-index: 100;
-  position: fixed;
-  left: 0;
-  top: 0;
-}
-
 .opaque {
   background-color: #333;
 }
@@ -58,8 +56,6 @@ header {
 ul.navbar-menu {
   min-height: 48px;
   width: auto;
-
-  /* center align the menu */
   text-align: center;
 }
 
@@ -72,8 +68,6 @@ ul.navbar-menu li {
 
 /* Links */
 ul.navbar-menu li a {
-
-  /* 8px padding top + 8px padding bottom + 32px line-height = 48px */
   cursor: pointer;
   display: inline-block;
   padding: 8px 13px;
@@ -99,6 +93,7 @@ ul.navbar-menu li.current a {
   color: #F06000;
 }
 
+// Hamburger CSS
 .hamburger-menu {
   width: 30px;
   height: 30px;

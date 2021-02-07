@@ -13,7 +13,7 @@ const start=async(config,listener)=>{
     try{
         const serverCreated=await server.start({port,config,listener});
         console.log(`Server of type ${type} started on PORT ${port}`)
-        return serverCreated
+        return serverCreated;
     }
     catch(err){
         throw err;

@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "NODE_ENV=development node src",
-    "start:withMongo":"docker-compose up",
+    "start": "NODE_ENV=development nodemon src",
+    "start:withMongo": "docker-compose up",
     "test": "mocha --timeout 10000 './src/**/*.spec.js' && yarn lint:code",
     "test:coverage": "nyc yarn test",
     "format": "prettier --write \"*(src|config)/**/*.{js,json}\"",
@@ -17,6 +17,7 @@
     "body-parser": "^1.19.0",
     "compose-middleware": "^5.0.1",
     "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
     "email-templates": "^7.0.5",
     "express": "^4.17.1",
     "mongoose": "^5.9.14",

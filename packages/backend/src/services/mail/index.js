@@ -1,13 +1,21 @@
 const nodemailer=require('nodemailer');
 const EmailTemplate=require('email-templates')
 const path=require('path')
+require('dotenv').config();
 
 const config=require('../../../config')
 
 const createTransporter=()=>(nodemailer.createTransport({
-        service: 'gmail',
+        host: 'smtp.gmail.com',
+        port: 465,
+        secure: true,
         auth: {
-            ...config.mailOptions.login
+          type: 'OAuth2',
+          user: process.env.EMAIL_ID,
+          clientId: process.env.CLIENT_ID,
+          clientSecret: process.env.CLIENT_SECRET,
+          refreshToken: process.env.REFRESH_TOKEN,
+          accessToken: process.env.ACCESS_TOKEN
            }
        })
     );
@@ -26,21 +34,21 @@ const loadTemplate=async(templateName,context)=>{
 
 const sendMail=async(mailOptions)=>{
     const transporter=createTransporter();
-    transporter.sendMail(mailOptions, function(error, info){
-        if (error) {
-          console.log(error);
-        } else {
-          console.log('Email sent: ' + info.response);
-        }
-      });
+    await transporter.sendMail(mailOptions)
 } 
 
 const mail=async(data)=>{
-    const clientHtmlMail=await loadTemplate('client',data);
-    const clientMailOptions=getMailOptions(data.email,config.mailOptions.clientSubject,clientHtmlMail);
+  try{
+    // const clientHtmlMail=await loadTemplate('client',data);
+    // const clientMailOptions=getMailOptions(data.email,config.mailOptions.clientSubject,clientHtmlMail);
     const adminHtmlMail=await loadTemplate('admin',{...data,admin:config.mailOptions.adminName});
     const adminMailOptions=getMailOptions(config.mailOptions.adminMail,`${config.mailOptions.adminSubject} from ${data.name}`,adminHtmlMail);
-    sendMail(clientMailOptions);
-    sendMail(adminMailOptions)
+    // await sendMail(clientMailOptions);
+    await sendMail(adminMailOptions)
+  }
+  catch(err){
+    console.log(err)
+   throw new Error("Node Mailer Service Failed")
+  }
 }
 module.exports=mail;

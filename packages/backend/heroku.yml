@@ -1,0 +1,5 @@
+build:
+  docker:
+    api: Dockefile
+run:
+  api: npm start

@@ -1,17 +1,15 @@
 import React from "react";
 import { Link } from "react-scroll";
+
 import "./style.css";
 
-const SideDrawer = ({ show, data, click }) => {
+const SideDrawer = ({ show, data }) => {
   const sideDrawerClass = ["sideDrawer"];
 
   if (show) {
     sideDrawerClass.push("show");
   }
-  const navItemClick = (id) => {
-    console.log(id);
-    click();
-  };
+
   return (
     show && (
       <div className={sideDrawerClass.join(" ")}>

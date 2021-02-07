@@ -11,12 +11,30 @@
       },
       {
         "id": "resume",
-        "name": "Resume",
-        "download": "../../assets/kriticv.pdf"
+        "name": "Resume"
+      },
+      {
+        "id": "contact",
+        "name": "Contact"
       }
     ]
   },
+  "about":{
+    "mainIntro":" Hi there! I am Kriti Raj! I am working as a Full Stack developer with more than 4.6 years of experience. I've worked around multiple projects designing, building and deploying applications from dev to production environment.I have experience working in multiple domains like AI, Finance and HR. With this I bring extensive experience in Web Development technologies and also with shipping the build to production.",
+    "secondaryIntro":" Apart from developing web applications and coding, I like to play cricket, listen to music and go for parties.",
+    "contact":{
+      "name":"Kriit Raj Singhi",
+      "location":"Leeds, UK",
+      "phone":"+44-(0)-7459034648",
+      "email":"kritirajsinghi@gmail.com"
+    }
+  },
   "resume": {
+    "company":"Wipro Digital",
+    "title":"Full Stack Developer",
+    "intro":" An enthusiastic full-stack developer with 4.6+ years of hands-on experience in designing, developing, and deploying intuitive digital applications for customers with expertise in front-end, back-end technologies, containerization, and deployment of the solutions.",
+    "time":"Jun 2016 - Present",
+    "skillsIntro":"My Programming Language Proficiency",
     "skills": [
       {
         "name": "JavaScript",
@@ -57,6 +75,48 @@
       {
         "name": "React Native",
         "level": "60%"
+      }
+    ]
+  },
+  "contact": {
+    "formItems": [
+      {
+        "type": "input",
+        "name": "Email",
+        "validation": {
+          "format": {
+            "value": "email",
+            "message": "Please enter valid email"
+          },
+          "required": {
+            "value": true,
+            "message": "This is mandatory field"
+          }
+        }
+      },
+      {
+        "type": "input",
+        "name": "Name",
+        "validation": {
+          "required": {
+            "value": true,
+            "message": "This is mandatory field"
+          }
+        }
+      },
+      {
+        "type": "textarea",
+        "name": "Message",
+        "validation": {
+          "required": {
+            "value": true,
+            "message": "This is mandatory field"
+          },
+          "minLength": {
+            "value": 20,
+            "message": "Please Describe your querry more"
+          }
+        }
       }
     ]
   },

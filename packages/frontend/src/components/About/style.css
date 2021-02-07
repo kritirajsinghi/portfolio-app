@@ -1,14 +1,24 @@
 #about {
   background-color: #f4f4f4;
   height: 88vh;
-  padding: 4rem 2rem;
+  padding:4rem 2rem 2rem 2.25rem;
   display: inline-table;
   /* max-width: 1300px; */
 }
 #about h3,
 .contact-details-block h3 {
-  font: 22px "opensans-bold", sans-serif;
-  font-weight: bold;
+  display: flex;
+  width: 100%;
+  /* border-bottom: 3px solid #11abb0; */
+  /* justify-content: center; */
+  font: 18px "opensans-bold", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding-bottom: 8px;
+  font-weight: bolder;
+}
+.contact-details-block h4{
+  font: 16px "opensans-bold", sans-serif;
 }
 .about-row {
   display: grid;
@@ -42,6 +52,9 @@
   color: #838795;
   margin: 0 0 30px;
 }
+.description-block{
+  padding-right: 3.5rem;
+}
 .description-block p {
   font-size: 16px;
   color: #838795;
@@ -53,17 +66,22 @@
 }
 @media only screen and (max-width: 767px) {
   .profile-image {
-    display: none;
+    max-width: 100px;
+    max-height: 100px;
+    margin-bottom: 30px;
   }
   .about-row {
     display: block;
+  }
+  .description-block{
+    padding-right: 0rem;
   }
   .description-block p,
   .contact-details-block p {
     font-size: 14px;
     color: #838795;
     text-align: justify;
-    line-height: 16px;
+    line-height: 18px;
   }
   .contact-details-block {
     display: block;
