@@ -9,7 +9,7 @@ import config from "../../../config/config";
 const Contact = ({ data }) => {
   const [apiResponse, setApiResponse] = useState({ success: null, error: null });
   const [loading, setLoading] = useState(false);
-  
+
   const submitData = async (data) => {
     setLoading(true);
     let form = {};

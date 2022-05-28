@@ -8,13 +8,13 @@ const Navbar = ({ logo, logoAlt, data, click }) => {
   return (
     <header>
       <nav className="navbar is-transparent" role="navigation">
-         {/* ----------------Navbar logo brand block---------------- */}
+        {/* ----------------Navbar logo brand block---------------- */}
         <div className="navbar-brand">
           <a className="navbar-item" href="/">
             <img className="navbar-img" src={logo} alt={logoAlt} />
           </a>
         </div>
-       {/* ----------------Navbar logo menu---------------- */}
+        {/* ----------------Navbar logo menu---------------- */}
         <ul className="navbar-menu">
           {data.menuItems.map((item, i) => (
             <li key={i} className={i == 0 ? "selected" : ""}>

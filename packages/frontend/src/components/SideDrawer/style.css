@@ -24,12 +24,12 @@
   padding: 0;
 }
 
-.sideDrawer-links>li {
+.sideDrawer-links > li {
   display: flex;
   align-items: center;
 }
 
-.sideDrawer-links>li>a {
+.sideDrawer-links > li > a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -46,11 +46,11 @@
   transition: color 0.2s ease-in-out;
 }
 
-.sideDrawer-links>li>a:hover {
+.sideDrawer-links > li > a:hover {
   color: #f06000;
 }
 
-.sideDrawer-links>li>a>span {
+.sideDrawer-links > li > a > span {
   display: flex;
   align-items: center;
   padding: 0rem 1rem;

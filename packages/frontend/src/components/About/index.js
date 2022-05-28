@@ -4,8 +4,7 @@ import resume from "assets/kriticv.pdf";
 import Button from "components/Button";
 
 import "./style.css";
-const About = ({data}) => {
-
+const About = ({ data }) => {
   const resumeDownload = () => {
     window.open(resume, "_blank");
   };
@@ -19,12 +18,8 @@ const About = ({data}) => {
         <div className="about-column">
           <div className="description-block">
             <h3>About Me</h3>
-            <p>
-             {data.mainIntro}
-            </p>
-            <p>
-              {data.secondaryIntro}
-            </p>
+            <p>{data.mainIntro}</p>
+            <p>{data.secondaryIntro}</p>
           </div>
           <div className="contact-details-block">
             <div>
@@ -36,7 +31,7 @@ const About = ({data}) => {
                   {data.contact.location}
                   <br />
                 </span>
-  <span>{data.contact.phone}</span>
+                <span>{data.contact.phone}</span>
                 <br />
                 <span>{data.contact.email}</span>
               </p>
@@ -47,8 +42,7 @@ const About = ({data}) => {
                 text="Download Resume"
                 onClick={resumeDownload}
                 icon="fa fa-download"
-              >
-              </Button>
+              ></Button>
             </div>
           </div>
         </div>
