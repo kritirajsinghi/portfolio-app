@@ -1,6 +1,8 @@
-FROM node:12.2.0-alpine as build
+FROM node:12 as build
 WORKDIR /app
 COPY package.json /app
+RUN apt-get update || : && apt-get install python -y
+
 RUN yarn install
 RUN yarn global add webpack-cli webpack rimraf
 COPY . /app
