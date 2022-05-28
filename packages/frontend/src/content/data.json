@@ -19,23 +19,39 @@
       }
     ]
   },
-  "about":{
-    "mainIntro":" Hi there! I am Kriti Raj! I am working as a Full Stack developer with more than 4.6 years of experience. I've worked around multiple projects designing, building and deploying applications from dev to production environment.I have experience working in multiple domains like AI, Finance and HR. With this I bring extensive experience in Web Development technologies and also with shipping the build to production.",
-    "secondaryIntro":" Apart from developing web applications and coding, I like to play cricket, listen to music and go for parties.",
-    "contact":{
-      "name":"Kriit Raj Singhi",
-      "location":"Leeds, UK",
-      "phone":"+44-(0)-7459034648",
-      "email":"kritirajsinghi@gmail.com"
+  "about": {
+    "mainIntro": " Hi there! I am Kriti Raj! I am working as a Full Stack developer with 6 years of experience. I've worked dozens of projects designing, building and deploying applications from dev to production environment.I have experience working in multiple domains like AI, Finance and HR. With this I bring extensive experience in Web Development technologies and also with shipping the build to production.",
+    "secondaryIntro": " Apart from developing web applications and coding, I like to play cricket, listen to music and go for parties.",
+    "contact": {
+      "name": "Kriit Raj Singhi",
+      "location": "Birmingham, UK",
+      "phone": "+44-(0)-7789435366",
+      "email": "kritirajsinghi@gmail.com"
     }
   },
-  "resume": {
-    "company":"Wipro Digital",
-    "title":"Full Stack Developer",
-    "intro":" An enthusiastic full-stack developer with 4.6+ years of hands-on experience in designing, developing, and deploying intuitive digital applications for customers with expertise in front-end, back-end technologies, containerization, and deployment of the solutions.",
-    "time":"Jun 2016 - Present",
-    "skillsIntro":"My Programming Language Proficiency",
-    "skills": [
+  "resume": [
+    {
+      "company": "Goldman Sachs",
+      "title": "Associate",
+      "introduction": "Working with the global team to develop new features for CRM application adding more capabilities to automate the data ingestion from various sources on better tracking and help impriove the relationship with the clients.",
+      "time": "Mar 2022 - Present"
+    },
+    {
+      "company": "Netapp",
+      "title": "Member of Technical staff 3",
+      "introduction": "Full stack developer worked with design and development of the SPOT PC product.",
+      "time": "May 2021 - Mar 2022"
+    },
+    {
+      "company": "Wipro Digital",
+      "title": "Full Stack Developer",
+      "introduction": "Working onsite at the client's location to better understand the requirements and apply my skills to provide intuitive response customer experience and also minimising the operation cost. Contribute in full-stack expertise knowledge in the development of products from requirements definition phase till go live. Worked closely with each client to fully understand their requirements and deliver accordingly. Excelled at rapid application development and management of technological issues for assigned projects.",
+      "time": "Jun 2016 - May 2021"
+    }
+  ],
+  "skills": {
+    "intro": "My Programming Language Proficiency",
+    "skillProficiency": [
       {
         "name": "JavaScript",
         "level": "90%"

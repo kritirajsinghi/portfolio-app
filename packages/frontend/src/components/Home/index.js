@@ -20,8 +20,8 @@ const Home = () => {
             />
           </h1>
           <h3>
-            Full Stack Developer @ Wipro Digital.<span> Based in Leeds, UK.</span> <br />I Design,
-            Build &amp; Deploy Fast, Responsive, Intuitive, Dynamic Web App&apos;s .
+            Full Stack Developer @ Goldman Sachs.<span> Based in Birmingham, UK.</span> <br />I
+            Design, Build &amp; Deploy Fast, Responsive, Intuitive, Dynamic Web App&apos;s .
           </h3>
           <hr />
         </div>

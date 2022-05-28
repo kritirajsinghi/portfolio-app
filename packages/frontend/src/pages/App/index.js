@@ -12,9 +12,7 @@ import Contact from "components/Contact";
 import data from "content/data.json";
 
 const App = () => {
-  
   const [sideToggle, setSideToggle] = useState(false);
-
   return (
     <div className="portfolio-app">
       <Navbar
@@ -26,8 +24,8 @@ const App = () => {
       />
       <SideDrawer show={sideToggle} data={data.nav} click={() => setSideToggle(!sideToggle)} />
       <Home />
-      <About data={data.about}/>
-      <Resume data={data.resume} />
+      <About data={data.about} />
+      <Resume resume={data.resume} skills={data.skills} />
       <Contact data={data.contact} />
       <Footer data={data.footer} />
     </div>

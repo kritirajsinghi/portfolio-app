@@ -41,7 +41,7 @@ const Form = ({ data, onSubmit, apiResponse }) => {
     setForm({ ...form, [formItem.name]: obj });
     formErrorStatus();
   };
-  
+
   return (
     <>
       {" "}
