@@ -75,6 +75,7 @@
 }
 
 .resume-item-title {
+  margin-top: 2rem;
   align-items: flex-start;
   /* display: flex; */
   justify-content: center;
@@ -91,6 +92,7 @@
   letter-spacing: 1px;
   padding-bottom: 8px;
   font-weight: bolder;
+  margin-bottom: 3rem;
 }
 
 .resume-item-main-col .light-para {
@@ -100,7 +102,13 @@
   text-align: justify;
   line-height: 28px;
 }
-
+.resume-logo-div {
+  margin-top: -45px;
+  align-content: center;
+}
+.resume-logo {
+  width: 50%;
+}
 @media only screen and (max-width: 767px) {
   #resume {
     height: 88vh;

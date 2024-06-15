@@ -39,7 +39,7 @@
   text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.8);
 }
 .banner-text h3 {
-  font: 18px/1.9em "librebaskerville-regular", serif;
+  font: 24px/2em "librebaskerville-regular", serif;
   color: #334d50;
   margin: 0 auto;
   width: 70%;
@@ -55,7 +55,14 @@
   border-color: #2f2d2e;
   border-color: rgba(150, 150, 150, 0.1);
 }
-
+.banner-text .banner-know-more {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.banner-know-more .button {
+  width: max-content;
+}
 @media only screen and (max-width: 1024px) {
   /* header styles
    ------------------------------------------------------------------ */

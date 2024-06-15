@@ -17,9 +17,10 @@ const About = ({ data }) => {
         </div>
         <div className="about-column">
           <div className="description-block">
-            <h3>About Me</h3>
+            <h3 className="about-me-title">About Me</h3>
             <p>{data.mainIntro}</p>
             <p>{data.secondaryIntro}</p>
+            <p>{data.moreIntro}</p>
           </div>
           <div className="contact-details-block">
             <div>
