@@ -18,6 +18,7 @@ class Button extends React.Component {
             ""
           )}
           <span className="button-title">{this.props.text}</span>
+          {this.props?.children}
         </button>
       </React.Fragment>
     );

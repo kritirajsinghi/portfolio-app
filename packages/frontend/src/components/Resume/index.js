@@ -1,5 +1,8 @@
 import React from "react";
 import "./style.css";
+import "assets/images/gs.svg";
+import "assets/images/netapp.svg";
+import "assets/images/wipro.svg";
 
 const Resume = ({ skills, resume }) => {
   /* ----------------- Map Skills to list of items ----------------- */
@@ -12,17 +15,20 @@ const Resume = ({ skills, resume }) => {
       </li>
     );
   });
-  console.log("=====", resume);
 
   return (
     <section id="resume">
       <div className="resume-items">
-        <div className="resume-item">
-          <div className="resume-item-title">
-            <h1>Work</h1>
-          </div>
-          <div>
-            {resume.map((item) => (
+        <div className="resume-item-title">
+          <h1>Work</h1>
+        </div>
+        {/* <div className="resume-item"> */}
+        <div>
+          {resume.map((item) => (
+            <div className="resume-item" key={item.company}>
+              <div className="resume-logo-div">
+                <img className="resume-logo" src={item.logo} alt="hello"></img>
+              </div>
               <div key={item.company} className="resume-item-main-col">
                 <h3>{item.company}</h3>
                 <div className="light-para">
@@ -32,30 +38,30 @@ const Resume = ({ skills, resume }) => {
                 </div>
                 <div className="light-para">{item.introduction}</div>
               </div>
-            ))}
-          </div>
-        </div>
-        <div className="resume-item">
-          <div className="resume-item-title">
-            <h1>Skills </h1>
-          </div>
-          <div className="resume-item-main-col">
-            <div className="light-para">
-              <p>{mappedSkills.intro}</p>
             </div>
-            <div className="bars">
-              <div>
-                <ul className="skills">
-                  {mappedSkills.slice(0, skills.skillProficiency.length / 2)}
-                </ul>
-              </div>
-              <div>
-                <ul className="skills">{mappedSkills.slice(skills.skillProficiency.length / 2)}</ul>
-              </div>
+          ))}
+        </div>
+        {/* </div> */}
+        <div className="resume-item-title">
+          <h1>Skills </h1>
+        </div>
+        <div className="resume-item-main-col">
+          <div className="light-para">
+            <p>{mappedSkills.intro}</p>
+          </div>
+          <div className="bars">
+            <div>
+              <ul className="skills">
+                {mappedSkills.slice(0, skills.skillProficiency.length / 2)}
+              </ul>
+            </div>
+            <div>
+              <ul className="skills">{mappedSkills.slice(skills.skillProficiency.length / 2)}</ul>
             </div>
           </div>
         </div>
       </div>
+      {/* </div> */}
     </section>
   );
 };
